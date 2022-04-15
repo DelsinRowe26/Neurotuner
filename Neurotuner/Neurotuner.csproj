@@ -59,6 +59,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BiQuadFilter.cs" />
     <Compile Include="PitchShifter.cs" />
     <Compile Include="SampleDSP.cs" />
     <Compile Include="SimpleMixer.cs" />

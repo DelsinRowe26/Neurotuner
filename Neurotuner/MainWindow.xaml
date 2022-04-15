@@ -6,17 +6,48 @@
         xmlns:local="clr-namespace:Neurotuner"
         xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Neurotuner.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="988" Loaded="Window_Loaded">
+        Title="MainWindow" Height="450" Width="988" Loaded="Window_Loaded" Closing="Window_Closing" Closed="Window_Closed">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TabControl x:Name="tabControl" Margin="0,10,0,207" HorizontalAlignment="Left" Width="591">
+        <TabControl x:Name="tabControl" Margin="0,10,0,207" HorizontalAlignment="Left" Width="606">
             <TabItem x:Name="Range1" Header="Range">
-                <Grid x:Name="Range" Background="#FFE5E5E5" HorizontalAlignment="Left" Width="579">
+                <Grid x:Name="Range" Background="#FFE5E5E5" HorizontalAlignment="Left" Width="594">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
+                    <TextBox x:Name="tbFrom1" HorizontalAlignment="Left" Margin="61,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81"/>
+                    <Label x:Name="lbFrom1" Content="1. From" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="lbTo1" Content="to" HorizontalAlignment="Left" Margin="142,3,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tbTo1" HorizontalAlignment="Left" Margin="163,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81"/>
+                    <Label x:Name="lbFromReverb1" Content="From" HorizontalAlignment="Left" Margin="22,26,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tbFromReverb1" HorizontalAlignment="Left" Margin="61,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81"/>
+                    <Label x:Name="lbToReverb1" Content="to" HorizontalAlignment="Left" Margin="142,26,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tbToReverb1" HorizontalAlignment="Left" Margin="163,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Visible"/>
+                    <Label x:Name="lbZnachPitch" Content="Pitch &#xD;&#xA;value &#xD;&#xA;from -15 &#xD;&#xA;to 15" HorizontalAlignment="Left" Margin="249,2,0,0" VerticalAlignment="Top" Height="73" Width="59"/>
+                    <Label x:Name="lbPitch1" Content="Pitch" HorizontalAlignment="Left" Margin="308,3,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tbPitch1" HorizontalAlignment="Left" Margin="358,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81"/>
+                    <Label x:Name="lbReverb1" Content="Reverb" HorizontalAlignment="Left" Margin="308,26,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tbReverb1" HorizontalAlignment="Left" Margin="358,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81"/>
+                    <Label x:Name="lbVol1" Content="Volume" HorizontalAlignment="Left" Margin="444,3,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tbVolume1" HorizontalAlignment="Left" Margin="498,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1"/>
+                    <TextBox x:Name="tbReverbHFRTR1" HorizontalAlignment="Left" Margin="498,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1"/>
+                    <TextBox x:Name="tbFrom2" HorizontalAlignment="Left" Margin="61,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81"/>
+                    <Label x:Name="lbFrom2" Content="2. From" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="lbTo2" Content="to" HorizontalAlignment="Left" Margin="142,50,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tbTo2" HorizontalAlignment="Left" Margin="163,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81"/>
+                    <Label x:Name="lbFromReverb2" Content="From" HorizontalAlignment="Left" Margin="22,73,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tbFromReverb2" HorizontalAlignment="Left" Margin="61,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81"/>
+                    <Label x:Name="lbToReverb2" Content="to" HorizontalAlignment="Left" Margin="142,73,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tbToReverb2" HorizontalAlignment="Left" Margin="163,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Visible"/>
+                    <Label x:Name="lbPitch2" Content="Pitch" HorizontalAlignment="Left" Margin="308,50,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tbPitch2" HorizontalAlignment="Left" Margin="358,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81"/>
+                    <Label x:Name="lbReverb2" Content="Reverb" HorizontalAlignment="Left" Margin="308,73,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tbReverb2" HorizontalAlignment="Left" Margin="358,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81"/>
+                    <Label x:Name="lbVol2" Content="Volume" HorizontalAlignment="Left" Margin="444,50,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tbVolume2" HorizontalAlignment="Left" Margin="498,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1"/>
+                    <TextBox x:Name="tbReverbHFRTR2" HorizontalAlignment="Left" Margin="498,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="Settings" Header="Settings">
@@ -39,17 +70,17 @@
             <ComboBoxItem Content="PitchEffects/Reverb"/>
         </ComboBox>
         <Label x:Name="lbSelEff" Content="Selecting Effects" HorizontalAlignment="Left" Margin="631,8,0,0" VerticalAlignment="Top"/>
-        <Slider x:Name="trackPitch" HorizontalAlignment="Left" Margin="679,52,0,0" VerticalAlignment="Top" Width="280" Minimum="-15" Maximum="15" TickPlacement="BottomRight" Height="29"/>
+        <Slider x:Name="trackPitch" HorizontalAlignment="Left" Margin="679,52,0,0" VerticalAlignment="Top" Width="280" Minimum="-15" Maximum="15" TickPlacement="BottomRight" Height="29" ValueChanged="trackPitch_ValueChanged" IsEnabled="False"/>
         <Label x:Name="lbPitch" Content="Pitch" HorizontalAlignment="Left" Margin="628,39,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbPitchValue" Content="0" HorizontalAlignment="Left" Margin="628,55,0,0" VerticalAlignment="Top"/>
-        <Slider x:Name="slider" HorizontalAlignment="Left" Margin="681,94,0,0" VerticalAlignment="Top" Width="280" Maximum="30" Minimum="-10" TickPlacement="BottomRight" Height="25"/>
+        <Slider x:Name="trackGain" HorizontalAlignment="Left" Margin="681,94,0,0" VerticalAlignment="Top" Width="280" Maximum="30" Minimum="-10" TickPlacement="BottomRight" Height="25" ValueChanged="trackGain_ValueChanged" IsEnabled="False"/>
         <Label x:Name="lbVolume" Content="Volume" HorizontalAlignment="Left" Margin="628,82,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbVolumeValue" Content="0" HorizontalAlignment="Left" Margin="629,101,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnPlus" Content="+" HorizontalAlignment="Left" Margin="596,170,0,0" VerticalAlignment="Top" Width="25"/>
-        <Button x:Name="btnMinus" Content="-" HorizontalAlignment="Left" Margin="596,197,0,0" VerticalAlignment="Top" Width="25"/>
-        <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Margin="764,132,0,0" VerticalAlignment="Top" Width="110" Height="20"/>
+        <Label x:Name="lbVolValue" Content="0" HorizontalAlignment="Left" Margin="629,101,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnPlus" Content="+" HorizontalAlignment="Left" Margin="611,170,0,0" VerticalAlignment="Top" Width="25"/>
+        <Button x:Name="btnMinus" Content="-" HorizontalAlignment="Left" Margin="611,197,0,0" VerticalAlignment="Top" Width="25" IsEnabled="False"/>
+        <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Margin="764,132,0,0" VerticalAlignment="Top" Width="110" Height="20" Click="btnReset_Click" IsEnabled="False"/>
         <Button x:Name="btnFix" Content="Fix" HorizontalAlignment="Left" Margin="764,158,0,0" VerticalAlignment="Top" Width="110" Height="20"/>
-        <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" Margin="764,185,0,0" VerticalAlignment="Top" Width="110" Height="20"/>
+        <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" Margin="764,185,0,0" VerticalAlignment="Top" Width="110" Height="20" Click="btnStop_Click" IsEnabled="False"/>
         <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="764,212,0,0" VerticalAlignment="Top" Width="110" Height="20"/>
 
     </Grid>
