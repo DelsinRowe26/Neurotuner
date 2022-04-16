@@ -201,9 +201,9 @@
         <Button x:Name="btnPlus" Content="+" HorizontalAlignment="Left" Margin="631,170,0,0" VerticalAlignment="Top" Width="25" Click="btnPlus_Click"/>
         <Button x:Name="btnMinus" Content="-" HorizontalAlignment="Left" Margin="631,197,0,0" VerticalAlignment="Top" Width="25" IsEnabled="False" Click="btnMinus_Click"/>
         <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Margin="764,132,0,0" VerticalAlignment="Top" Width="110" Height="20" Click="btnReset_Click" IsEnabled="False"/>
-        <Button x:Name="btnFix" Content="Fix" HorizontalAlignment="Left" Margin="764,158,0,0" VerticalAlignment="Top" Width="110" Height="20" IsEnabled="False"/>
+        <Button x:Name="btnFix" Content="Fix" HorizontalAlignment="Left" Margin="764,158,0,0" VerticalAlignment="Top" Width="110" Height="20" IsEnabled="False" Click="btnFix_Click"/>
         <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" Margin="764,185,0,0" VerticalAlignment="Top" Width="110" Height="20" Click="btnStop_Click" IsEnabled="False"/>
-        <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="764,212,0,0" VerticalAlignment="Top" Width="110" Height="20"/>
+        <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="764,212,0,0" VerticalAlignment="Top" Width="110" Height="20" Click="btnStart_Click"/>
 
     </Grid>
 </Window>
