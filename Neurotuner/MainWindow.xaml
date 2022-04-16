@@ -6,49 +6,171 @@
         xmlns:local="clr-namespace:Neurotuner"
         xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Neurotuner.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="988" Loaded="Window_Loaded" Closing="Window_Closing" Closed="Window_Closed">
+        Title="MainWindow" Height="289" Width="988" Loaded="Window_Loaded" Closing="Window_Closing" Closed="Window_Closed">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TabControl x:Name="tabControl" Margin="0,10,0,207" HorizontalAlignment="Left" Width="606">
+        <TabControl x:Name="tabControl" Margin="0,10,0,15" HorizontalAlignment="Left" Width="615" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True">
             <TabItem x:Name="Range1" Header="Range">
-                <Grid x:Name="Range" Background="#FFE5E5E5" HorizontalAlignment="Left" Width="594">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <TextBox x:Name="tbFrom1" HorizontalAlignment="Left" Margin="61,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81"/>
-                    <Label x:Name="lbFrom1" Content="1. From" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="lbTo1" Content="to" HorizontalAlignment="Left" Margin="142,3,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbTo1" HorizontalAlignment="Left" Margin="163,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81"/>
-                    <Label x:Name="lbFromReverb1" Content="From" HorizontalAlignment="Left" Margin="22,26,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbFromReverb1" HorizontalAlignment="Left" Margin="61,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81"/>
-                    <Label x:Name="lbToReverb1" Content="to" HorizontalAlignment="Left" Margin="142,26,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbToReverb1" HorizontalAlignment="Left" Margin="163,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Visible"/>
-                    <Label x:Name="lbZnachPitch" Content="Pitch &#xD;&#xA;value &#xD;&#xA;from -15 &#xD;&#xA;to 15" HorizontalAlignment="Left" Margin="249,2,0,0" VerticalAlignment="Top" Height="73" Width="59"/>
-                    <Label x:Name="lbPitch1" Content="Pitch" HorizontalAlignment="Left" Margin="308,3,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbPitch1" HorizontalAlignment="Left" Margin="358,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81"/>
-                    <Label x:Name="lbReverb1" Content="Reverb" HorizontalAlignment="Left" Margin="308,26,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbReverb1" HorizontalAlignment="Left" Margin="358,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81"/>
-                    <Label x:Name="lbVol1" Content="Volume" HorizontalAlignment="Left" Margin="444,3,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbVolume1" HorizontalAlignment="Left" Margin="498,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1"/>
-                    <TextBox x:Name="tbReverbHFRTR1" HorizontalAlignment="Left" Margin="498,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1"/>
-                    <TextBox x:Name="tbFrom2" HorizontalAlignment="Left" Margin="61,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81"/>
-                    <Label x:Name="lbFrom2" Content="2. From" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="lbTo2" Content="to" HorizontalAlignment="Left" Margin="142,50,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbTo2" HorizontalAlignment="Left" Margin="163,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81"/>
-                    <Label x:Name="lbFromReverb2" Content="From" HorizontalAlignment="Left" Margin="22,73,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbFromReverb2" HorizontalAlignment="Left" Margin="61,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81"/>
-                    <Label x:Name="lbToReverb2" Content="to" HorizontalAlignment="Left" Margin="142,73,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbToReverb2" HorizontalAlignment="Left" Margin="163,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Visible"/>
-                    <Label x:Name="lbPitch2" Content="Pitch" HorizontalAlignment="Left" Margin="308,50,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbPitch2" HorizontalAlignment="Left" Margin="358,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81"/>
-                    <Label x:Name="lbReverb2" Content="Reverb" HorizontalAlignment="Left" Margin="308,73,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbReverb2" HorizontalAlignment="Left" Margin="358,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81"/>
-                    <Label x:Name="lbVol2" Content="Volume" HorizontalAlignment="Left" Margin="444,50,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbVolume2" HorizontalAlignment="Left" Margin="498,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1"/>
-                    <TextBox x:Name="tbReverbHFRTR2" HorizontalAlignment="Left" Margin="498,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1"/>
-                </Grid>
+                <ScrollViewer x:Name="scrollViewer" HorizontalAlignment="Left" Width="602" VerticalScrollBarVisibility="Auto" CanContentScroll="True" >
+                    <Grid x:Name="Range" Background="#FFE5E5E5" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="525" Width="602" ScrollViewer.CanContentScroll="True" Grid.IsSharedSizeScope="True" ShowGridLines="True">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox x:Name="tbFrom1" HorizontalAlignment="Left" Margin="61,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbFrom1" Content="1. From" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <Label x:Name="lbTo1" Content="to" HorizontalAlignment="Left" Margin="142,3,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbTo1" HorizontalAlignment="Left" Margin="163,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbFromReverb1" Content="From" HorizontalAlignment="Left" Margin="22,26,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbFromReverb1" HorizontalAlignment="Left" Margin="61,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbToReverb1" Content="to" HorizontalAlignment="Left" Margin="142,26,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbToReverb1" HorizontalAlignment="Left" Margin="163,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbZnachPitch" Content="Pitch &#xA;value &#xA;from -15 &#xA;to 15" HorizontalAlignment="Left" Margin="249,2,0,0" VerticalAlignment="Top" Height="73" Width="59" Visibility="Hidden"/>
+                        <Label x:Name="lbPitch1" Content="Pitch" HorizontalAlignment="Left" Margin="308,3,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbPitch1" HorizontalAlignment="Left" Margin="358,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbReverb1" Content="Reverb" HorizontalAlignment="Left" Margin="308,26,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbReverb1" HorizontalAlignment="Left" Margin="358,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbVol1" Content="Volume" HorizontalAlignment="Left" Margin="444,3,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbVolume1" HorizontalAlignment="Left" Margin="498,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1" Visibility="Hidden"/>
+                        <TextBox x:Name="tbReverbHFRTR1" HorizontalAlignment="Left" Margin="498,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1" Visibility="Hidden"/>
+                        <TextBox x:Name="tbFrom2" HorizontalAlignment="Left" Margin="61,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbFrom2" Content="2. From" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <Label x:Name="lbTo2" Content="to" HorizontalAlignment="Left" Margin="142,50,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbTo2" HorizontalAlignment="Left" Margin="163,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbFromReverb2" Content="From" HorizontalAlignment="Left" Margin="22,73,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbFromReverb2" HorizontalAlignment="Left" Margin="61,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbToReverb2" Content="to" HorizontalAlignment="Left" Margin="142,73,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbToReverb2" HorizontalAlignment="Left" Margin="163,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbPitch2" Content="Pitch" HorizontalAlignment="Left" Margin="308,50,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbPitch2" HorizontalAlignment="Left" Margin="358,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbReverb2" Content="Reverb" HorizontalAlignment="Left" Margin="308,73,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbReverb2" HorizontalAlignment="Left" Margin="358,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbVol2" Content="Volume" HorizontalAlignment="Left" Margin="444,50,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbVolume2" HorizontalAlignment="Left" Margin="498,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1" Visibility="Hidden"/>
+                        <TextBox x:Name="tbReverbHFRTR2" HorizontalAlignment="Left" Margin="498,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1" Visibility="Hidden"/>
+                        <TextBox x:Name="tbFrom3" HorizontalAlignment="Left" Margin="61,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbFrom3" Content="3. From" HorizontalAlignment="Left" Margin="10,97,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <Label x:Name="lbTo3" Content="to" HorizontalAlignment="Left" Margin="142,97,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbTo3" HorizontalAlignment="Left" Margin="163,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbFromReverb3" Content="From" HorizontalAlignment="Left" Margin="22,120,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbFromReverb3" HorizontalAlignment="Left" Margin="61,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbToReverb3" Content="to" HorizontalAlignment="Left" Margin="142,120,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbToReverb3" HorizontalAlignment="Left" Margin="163,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <TextBox x:Name="tbFrom4" HorizontalAlignment="Left" Margin="61,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbFrom4" Content="4. From" HorizontalAlignment="Left" Margin="10,144,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <Label x:Name="lbTo4" Content="to" HorizontalAlignment="Left" Margin="142,144,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbTo4" HorizontalAlignment="Left" Margin="163,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbFromReverb4" Content="From" HorizontalAlignment="Left" Margin="22,167,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbFromReverb4" HorizontalAlignment="Left" Margin="61,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbToReverb4" Content="to" HorizontalAlignment="Left" Margin="142,167,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbToReverb4" HorizontalAlignment="Left" Margin="163,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbPitch3" Content="Pitch" HorizontalAlignment="Left" Margin="308,97,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbPitch3" HorizontalAlignment="Left" Margin="358,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbReverb3" Content="Reverb" HorizontalAlignment="Left" Margin="308,120,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbReverb3" HorizontalAlignment="Left" Margin="358,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbVol3" Content="Volume" HorizontalAlignment="Left" Margin="444,97,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbVolume3" HorizontalAlignment="Left" Margin="498,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1" Visibility="Hidden"/>
+                        <TextBox x:Name="tbReverbHFRTR3" HorizontalAlignment="Left" Margin="498,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1" Visibility="Hidden"/>
+                        <Label x:Name="lbPitch4" Content="Pitch" HorizontalAlignment="Left" Margin="308,144,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbPitch4" HorizontalAlignment="Left" Margin="358,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbReverb4" Content="Reverb" HorizontalAlignment="Left" Margin="308,167,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbReverb4" HorizontalAlignment="Left" Margin="358,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbVol4" Content="Volume" HorizontalAlignment="Left" Margin="444,144,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbVolume4" HorizontalAlignment="Left" Margin="498,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1" Visibility="Hidden"/>
+                        <TextBox x:Name="tbReverbHFRTR4" HorizontalAlignment="Left" Margin="498,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1" Visibility="Hidden"/>
+                        <TextBox x:Name="tbFrom5" HorizontalAlignment="Left" Margin="61,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbFrom5" Content="5. From" HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <Label x:Name="lbTo5" Content="to" HorizontalAlignment="Left" Margin="142,190,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbTo5" HorizontalAlignment="Left" Margin="163,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbFromReverb5" Content="From" HorizontalAlignment="Left" Margin="22,213,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbFromReverb5" HorizontalAlignment="Left" Margin="61,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbToReverb5" Content="to" HorizontalAlignment="Left" Margin="142,213,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbToReverb5" HorizontalAlignment="Left" Margin="163,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbPitch5" Content="Pitch" HorizontalAlignment="Left" Margin="308,190,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbPitch5" HorizontalAlignment="Left" Margin="358,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbReverb5" Content="Reverb" HorizontalAlignment="Left" Margin="308,213,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbReverb5" HorizontalAlignment="Left" Margin="358,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbVol5" Content="Volume" HorizontalAlignment="Left" Margin="444,190,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbVolume5" HorizontalAlignment="Left" Margin="498,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1" Visibility="Hidden"/>
+                        <TextBox x:Name="tbReverbHFRTR5" HorizontalAlignment="Left" Margin="498,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1" Visibility="Hidden"/>
+                        <TextBox x:Name="tbFrom6" HorizontalAlignment="Left" Margin="61,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbFrom6" Content="6. From" HorizontalAlignment="Left" Margin="10,237,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <Label x:Name="lbTo6" Content="to" HorizontalAlignment="Left" Margin="142,237,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbTo6" HorizontalAlignment="Left" Margin="163,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbFromReverb6" Content="From" HorizontalAlignment="Left" Margin="22,260,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbFromReverb6" HorizontalAlignment="Left" Margin="61,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbToReverb6" Content="to" HorizontalAlignment="Left" Margin="142,260,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbToReverb6" HorizontalAlignment="Left" Margin="163,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbPitch6" Content="Pitch" HorizontalAlignment="Left" Margin="308,237,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbPitch6" HorizontalAlignment="Left" Margin="358,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbReverb6" Content="Reverb" HorizontalAlignment="Left" Margin="308,260,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbReverb6" HorizontalAlignment="Left" Margin="358,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbVol6" Content="Volume" HorizontalAlignment="Left" Margin="444,237,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbVolume6" HorizontalAlignment="Left" Margin="498,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1" Visibility="Hidden"/>
+                        <TextBox x:Name="tbReverbHFRTR6" HorizontalAlignment="Left" Margin="498,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1" Visibility="Hidden"/>
+                        <TextBox x:Name="tbFrom7" HorizontalAlignment="Left" Margin="61,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbFrom7" Content="7. From" HorizontalAlignment="Left" Margin="10,283,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <Label x:Name="lbTo7" Content="to" HorizontalAlignment="Left" Margin="142,283,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbTo7" HorizontalAlignment="Left" Margin="163,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbFromReverb7" Content="From" HorizontalAlignment="Left" Margin="22,306,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbFromReverb7" HorizontalAlignment="Left" Margin="61,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbToReverb7" Content="to" HorizontalAlignment="Left" Margin="142,306,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbToReverb7" HorizontalAlignment="Left" Margin="163,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbPitch7" Content="Pitch" HorizontalAlignment="Left" Margin="308,283,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbPitch7" HorizontalAlignment="Left" Margin="358,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbReverb7" Content="Reverb" HorizontalAlignment="Left" Margin="308,306,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbReverb7" HorizontalAlignment="Left" Margin="358,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbVol7" Content="Volume" HorizontalAlignment="Left" Margin="444,283,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbVolume7" HorizontalAlignment="Left" Margin="498,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1" Visibility="Hidden"/>
+                        <TextBox x:Name="tbReverbHFRTR7" HorizontalAlignment="Left" Margin="498,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1" Visibility="Hidden"/>
+                        <TextBox x:Name="tbFrom8" HorizontalAlignment="Left" Margin="61,334,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbFrom8" Content="8. From" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <Label x:Name="lbTo8" Content="to" HorizontalAlignment="Left" Margin="142,330,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbTo8" HorizontalAlignment="Left" Margin="163,334,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbFromReverb8" Content="From" HorizontalAlignment="Left" Margin="22,353,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbFromReverb8" HorizontalAlignment="Left" Margin="61,357,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbToReverb8" Content="to" HorizontalAlignment="Left" Margin="142,353,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbToReverb8" HorizontalAlignment="Left" Margin="163,357,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbPitch8" Content="Pitch" HorizontalAlignment="Left" Margin="308,330,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbPitch8" HorizontalAlignment="Left" Margin="358,334,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbReverb8" Content="Reverb" HorizontalAlignment="Left" Margin="308,353,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbReverb8" HorizontalAlignment="Left" Margin="358,357,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbVol8" Content="Volume" HorizontalAlignment="Left" Margin="444,330,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbVolume8" HorizontalAlignment="Left" Margin="498,334,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1" Visibility="Hidden"/>
+                        <TextBox x:Name="tbReverbHFRTR8" HorizontalAlignment="Left" Margin="498,357,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1" Visibility="Hidden"/>
+                        <TextBox x:Name="tbFrom9" HorizontalAlignment="Left" Margin="61,381,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbFrom9" Content="9. From" HorizontalAlignment="Left" Margin="10,377,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <Label x:Name="lbTo9" Content="to" HorizontalAlignment="Left" Margin="142,377,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbTo9" HorizontalAlignment="Left" Margin="163,381,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbFromReverb9" Content="From" HorizontalAlignment="Left" Margin="22,400,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbFromReverb9" HorizontalAlignment="Left" Margin="61,404,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbToReverb9" Content="to" HorizontalAlignment="Left" Margin="142,400,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbToReverb9" HorizontalAlignment="Left" Margin="163,404,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbPitch9" Content="Pitch" HorizontalAlignment="Left" Margin="308,377,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbPitch9" HorizontalAlignment="Left" Margin="358,381,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbReverb9" Content="Reverb" HorizontalAlignment="Left" Margin="308,400,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbReverb9" HorizontalAlignment="Left" Margin="358,404,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbVol9" Content="Volume" HorizontalAlignment="Left" Margin="444,377,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbVolume9" HorizontalAlignment="Left" Margin="498,381,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1" Visibility="Hidden"/>
+                        <TextBox x:Name="tbReverbHFRTR9" HorizontalAlignment="Left" Margin="498,404,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1" Visibility="Hidden"/>
+                        <TextBox x:Name="tbFrom10" HorizontalAlignment="Left" Margin="61,428,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbFrom10" Content="10. From" HorizontalAlignment="Left" Margin="3,424,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <Label x:Name="lbTo10" Content="to" HorizontalAlignment="Left" Margin="142,424,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbTo10" HorizontalAlignment="Left" Margin="163,428,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbFromReverb10" Content="From" HorizontalAlignment="Left" Margin="22,447,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbFromReverb10" HorizontalAlignment="Left" Margin="61,451,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbToReverb10" Content="to" HorizontalAlignment="Left" Margin="142,447,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbToReverb10" HorizontalAlignment="Left" Margin="163,451,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbPitch10" Content="Pitch" HorizontalAlignment="Left" Margin="308,424,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbPitch10" HorizontalAlignment="Left" Margin="358,428,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbReverb10" Content="Reverb" HorizontalAlignment="Left" Margin="308,447,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbReverb10" HorizontalAlignment="Left" Margin="358,451,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Visibility="Hidden"/>
+                        <Label x:Name="lbVol10" Content="Volume" HorizontalAlignment="Left" Margin="444,424,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                        <TextBox x:Name="tbVolume10" HorizontalAlignment="Left" Margin="498,428,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1" Visibility="Hidden"/>
+                        <TextBox x:Name="tbReverbHFRTR10" HorizontalAlignment="Left" Margin="498,451,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="1" Visibility="Hidden"/>
+                    </Grid>
+                </ScrollViewer>
             </TabItem>
             <TabItem x:Name="Settings" Header="Settings">
                 <Grid Background="#FFE5E5E5">
@@ -76,10 +198,10 @@
         <Slider x:Name="trackGain" HorizontalAlignment="Left" Margin="681,94,0,0" VerticalAlignment="Top" Width="280" Maximum="30" Minimum="-10" TickPlacement="BottomRight" Height="25" ValueChanged="trackGain_ValueChanged" IsEnabled="False"/>
         <Label x:Name="lbVolume" Content="Volume" HorizontalAlignment="Left" Margin="628,82,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbVolValue" Content="0" HorizontalAlignment="Left" Margin="629,101,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnPlus" Content="+" HorizontalAlignment="Left" Margin="611,170,0,0" VerticalAlignment="Top" Width="25"/>
-        <Button x:Name="btnMinus" Content="-" HorizontalAlignment="Left" Margin="611,197,0,0" VerticalAlignment="Top" Width="25" IsEnabled="False"/>
+        <Button x:Name="btnPlus" Content="+" HorizontalAlignment="Left" Margin="631,170,0,0" VerticalAlignment="Top" Width="25" Click="btnPlus_Click"/>
+        <Button x:Name="btnMinus" Content="-" HorizontalAlignment="Left" Margin="631,197,0,0" VerticalAlignment="Top" Width="25" IsEnabled="False" Click="btnMinus_Click"/>
         <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Margin="764,132,0,0" VerticalAlignment="Top" Width="110" Height="20" Click="btnReset_Click" IsEnabled="False"/>
-        <Button x:Name="btnFix" Content="Fix" HorizontalAlignment="Left" Margin="764,158,0,0" VerticalAlignment="Top" Width="110" Height="20"/>
+        <Button x:Name="btnFix" Content="Fix" HorizontalAlignment="Left" Margin="764,158,0,0" VerticalAlignment="Top" Width="110" Height="20" IsEnabled="False"/>
         <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" Margin="764,185,0,0" VerticalAlignment="Top" Width="110" Height="20" Click="btnStop_Click" IsEnabled="False"/>
         <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="764,212,0,0" VerticalAlignment="Top" Width="110" Height="20"/>
 
