@@ -85,7 +85,7 @@ namespace Neurotuner
                 mSoundIn.Initialize();
 
 
-                if (cmbSelEff.SelectedIndex == 1)
+                if (cmbSelEff.SelectedIndex == 2)
                 {
                     //Init DSP для смещения высоты тона
                     //var source = new SoundInSource(mSoundIn) { FillWithZeros = true };
@@ -122,7 +122,7 @@ namespace Neurotuner
                     }
                     SoundOut();
                 }
-                else if (cmbSelEff.SelectedIndex == 0)
+                else if (cmbSelEff.SelectedIndex == 1)
                 {
                     if (isDataValid(minR, maxR, reverbTime, reverbHFRTR, plusclick))
                     {
@@ -151,7 +151,7 @@ namespace Neurotuner
                         propertyGridBottom.SelectedObject = mVoicePrint;*/
                     }
                 }
-                else if (cmbSelEff.SelectedIndex == 2)
+                else if (cmbSelEff.SelectedIndex == 0)
                 {
                     for (int i = 0; i < plusclick; i++)
                     {
@@ -205,7 +205,7 @@ namespace Neurotuner
         private void trackGain_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             mDsp.GainDB = (float)trackGain.Value;
-            lbVolValue.Content = (float)trackGain.Value;
+            VolValue();
         }
 
         private void trackPitch_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -213,6 +213,7 @@ namespace Neurotuner
             if (cmbSelEff.SelectedIndex == 1 || cmbSelEff.SelectedIndex == 2)
             {
                 SetPitchShiftValue();
+                PitchValue();
             }
         }
 
@@ -650,6 +651,8 @@ namespace Neurotuner
             trackGain.IsEnabled = false;
             trackPitch.IsEnabled = false;
             btnReset.IsEnabled = false;
+            btnStop.IsEnabled = false;
+            btnStart.IsEnabled = true;
         }
 
         private void StopFullDuplex()
@@ -817,8 +820,26 @@ namespace Neurotuner
                 mSoundOut.Play();
                 trackGain.IsEnabled = true;
                 trackPitch.IsEnabled = true;
+                btnStop.IsEnabled = true;
+                btnStart.IsEnabled = false;
                 //chkAddMp3.Enabled = true;
                 btnReset.IsEnabled = true;
+            }
+        }
+
+        private void cmbSampFreq_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmbSampFreq.SelectedIndex == 0)
+            {
+                SampleRate = 44100;
+                PitchShifter.SampleRate2 = 22050;
+                //pitch.SampleRate = 44100;
+            }
+            else if (cmbSampFreq.SelectedIndex == 1)
+            {
+                SampleRate = 48000;
+                PitchShifter.SampleRate2 = 24000;
+                //pitch.SampleRate = 48000;
             }
         }
 

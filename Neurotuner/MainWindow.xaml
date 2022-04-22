@@ -178,7 +178,7 @@
                     <Label x:Name="lbMicrophone" Content="Microphone" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top"/>
                     <ComboBox x:Name="cmbOutput" HorizontalAlignment="Left" Margin="89,46,0,0" VerticalAlignment="Top" Width="230"/>
                     <Label x:Name="lbSpeaker" Content="Speaker" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="cmbSampFreq" HorizontalAlignment="Left" Margin="449,10,0,0" VerticalAlignment="Top" Width="120">
+                    <ComboBox x:Name="cmbSampFreq" HorizontalAlignment="Left" Margin="449,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmbSampFreq_SelectionChanged">
                         <ComboBoxItem Content="44100"/>
                         <ComboBoxItem Content="48000"/>
                     </ComboBox>
@@ -189,6 +189,8 @@
         <ComboBox x:Name="cmbSelEff" HorizontalAlignment="Left" Margin="738,10,0,0" VerticalAlignment="Top" Width="160">
             <ComboBoxItem Content="Reverb"/>
             <ComboBoxItem Content="PitchEffects"/>
+            <ComboBoxItem Content="PitchEffects(Slider/the whole spectrum)"/>
+            <ComboBoxItem Content="PitchEffects(Slider/Range)"/>
             <ComboBoxItem Content="PitchEffects/Reverb"/>
         </ComboBox>
         <Label x:Name="lbSelEff" Content="Selecting Effects" HorizontalAlignment="Left" Margin="631,8,0,0" VerticalAlignment="Top"/>
