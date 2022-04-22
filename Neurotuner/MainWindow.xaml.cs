@@ -85,7 +85,7 @@ namespace Neurotuner
                 mSoundIn.Initialize();
 
 
-                if (cmbSelEff.SelectedIndex == 2)
+                if (cmbSelEff.SelectedIndex == 4)
                 {
                     //Init DSP для смещения высоты тона
                     //var source = new SoundInSource(mSoundIn) { FillWithZeros = true };
@@ -122,7 +122,7 @@ namespace Neurotuner
                     }
                     SoundOut();
                 }
-                else if (cmbSelEff.SelectedIndex == 1)
+                else if (cmbSelEff.SelectedIndex == 0)
                 {
                     if (isDataValid(minR, maxR, reverbTime, reverbHFRTR, plusclick))
                     {
@@ -151,7 +151,7 @@ namespace Neurotuner
                         propertyGridBottom.SelectedObject = mVoicePrint;*/
                     }
                 }
-                else if (cmbSelEff.SelectedIndex == 0)
+                else if (cmbSelEff.SelectedIndex == 1)
                 {
                     for (int i = 0; i < plusclick; i++)
                     {
@@ -210,7 +210,7 @@ namespace Neurotuner
 
         private void trackPitch_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if (cmbSelEff.SelectedIndex == 1 || cmbSelEff.SelectedIndex == 2)
+            if (cmbSelEff.SelectedIndex == 1 || cmbSelEff.SelectedIndex == 2 || cmbSelEff.SelectedIndex == 3 || cmbSelEff.SelectedIndex == 4)
             {
                 SetPitchShiftValue();
                 PitchValue();

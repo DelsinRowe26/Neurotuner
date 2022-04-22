@@ -191,7 +191,7 @@
             <ComboBoxItem Content="PitchEffects"/>
             <ComboBoxItem Content="PitchEffects(Slider/the whole spectrum)"/>
             <ComboBoxItem Content="PitchEffects(Slider/Range)"/>
-            <ComboBoxItem Content="PitchEffects/Reverb"/>
+            <ComboBoxItem Content="PitchEffects/Reverb(TextBox)"/>
         </ComboBox>
         <Label x:Name="lbSelEff" Content="Selecting Effects" HorizontalAlignment="Left" Margin="631,8,0,0" VerticalAlignment="Top"/>
         <Slider x:Name="trackPitch" HorizontalAlignment="Left" Margin="679,52,0,0" VerticalAlignment="Top" Width="280" Minimum="-15" Maximum="15" TickPlacement="BottomRight" Height="29" ValueChanged="trackPitch_ValueChanged" IsEnabled="False"/>
