@@ -20,6 +20,7 @@ using CSCore.Streams;
 using CSCore.Codecs;
 using CSCore.Streams.Effects;
 using CSCore.DSP;
+using System.Diagnostics;
 
 namespace Neurotuner
 {
@@ -187,7 +188,7 @@ namespace Neurotuner
             {
                 string msg = "Error in StartFullDuplex: \r\n" + ex.Message;
                 MessageBox.Show(msg);
-                //Debug.WriteLine(msg);
+                Debug.WriteLine(msg); 
             }
             return false;
         }
