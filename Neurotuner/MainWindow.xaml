@@ -186,7 +186,7 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <ComboBox x:Name="cmbSelEff" HorizontalAlignment="Left" Margin="738,10,0,0" VerticalAlignment="Top" Width="160">
+        <ComboBox x:Name="cmbSelEff" HorizontalAlignment="Left" Margin="738,10,0,0" VerticalAlignment="Top" Width="160" SelectionChanged="cmbSelEff_SelectionChanged">
             <ComboBoxItem Content="Reverb"/>
             <ComboBoxItem Content="PitchEffects"/>
             <ComboBoxItem Content="PitchEffects(Slider/the whole spectrum)"/>
