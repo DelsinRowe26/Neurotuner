@@ -1080,17 +1080,26 @@ namespace Neurotuner
 
         private void btnStart_Click(object sender, RoutedEventArgs e)
         {
-            StopFullDuplex();
-            if (StartFullDuplex())
+            try
             {
-                mSoundIn.Start();
-                mSoundOut.Play();
-                trackGain.IsEnabled = true;
-                trackPitch.IsEnabled = true;
-                btnStop.IsEnabled = true;
-                btnStart.IsEnabled = false;
-                //chkAddMp3.Enabled = true;
-                btnReset.IsEnabled = true;
+                StopFullDuplex();
+                if (StartFullDuplex())
+                {
+                    mSoundIn.Start();
+                    mSoundOut.Play();
+                    trackGain.IsEnabled = true;
+                    trackPitch.IsEnabled = true;
+                    btnStop.IsEnabled = true;
+                    btnStart.IsEnabled = false;
+                    //chkAddMp3.Enabled = true;
+                    btnReset.IsEnabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                string msg = "Error in StartFullDuplex: \r\n" + ex.Message;
+                MessageBox.Show(msg);
+                Debug.WriteLine(msg);
             }
         }
 
