@@ -1215,6 +1215,14 @@ namespace Neurotuner
             return true;
         }
 
-
+        private void OnMouseMove(object sender, MouseEventArgs e)
+        {
+            Style style = new Style();
+            style.Setters.Add(new Setter { Property = Control.FontFamilyProperty, Value = new FontFamily("Verdana") });
+            style.Setters.Add(new Setter { Property = Control.MarginProperty, Value = new Thickness(10) });
+            style.Setters.Add(new Setter { Property = Control.BackgroundProperty, Value = new SolidColorBrush(Colors.Blue) });
+            style.Setters.Add(new Setter { Property = Control.ForegroundProperty, Value = new SolidColorBrush(Colors.White) });
+            btnStart.Style = style;
+        }
     }
 }

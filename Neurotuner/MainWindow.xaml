@@ -245,7 +245,7 @@
                 <Button.Template>
                     <ControlTemplate>
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="1" CornerRadius="7,7,7,7">
-                            <Border.Background>Black</Border.Background>
+                            <Border.Background>Aquamarine</Border.Background>
                             <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" ></ContentPresenter>
                         </Border>
                     </ControlTemplate>
@@ -253,20 +253,20 @@
                 <Button.Style>
                     <Style>
                         <Setter Property="Control.FontFamily" Value="Verdana"/>
-                        <Setter Property="Control.Background" Value="Black"/>
-                        <Setter Property="Control.Foreground" Value="White"/>
+                        <Setter Property="Control.Background" Value="Aquamarine"/>
+                        <Setter Property="Control.Foreground" Value="Black"/>
                         <Setter Property="Control.Margin" Value="10"/>
                     </Style>
                 </Button.Style>
             </Button>
-            <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="764,212,0,0" VerticalAlignment="Top" Width="110" Height="20" Click="btnStart_Click">
+            <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="764,212,0,0" VerticalAlignment="Top" Width="110" Height="20" Click="btnStart_Click" MouseMove="OnMouseMove" Background="Aquamarine">
                 <Button.Template>
                     <ControlTemplate>
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="1" CornerRadius="7,7,7,7">
                             <FocusManager.FocusedElement>
                                 <Button>btnStart</Button>
                             </FocusManager.FocusedElement>
-                            <Border.Background>Black</Border.Background>
+                            <Border.Background>Aquamarine</Border.Background>
                             <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" ></ContentPresenter>
                         </Border>
                     </ControlTemplate>
@@ -275,10 +275,10 @@
                 <Button.Style>
                     <Style>
                         <Setter Property="Control.FontFamily" Value="Verdana"/>
-                        <Setter Property="Control.Background" Value="Black"/>
-                        <Setter Property="Control.Foreground" Value="White"/>
+                        <Setter Property="Control.Background" Value="Aquamarine"/>
+                        <Setter Property="Control.Foreground" Value="Black"/>
                         <Setter Property="Control.Margin" Value="10"/>
-                        
+
                     </Style>
                 </Button.Style>
             </Button>
