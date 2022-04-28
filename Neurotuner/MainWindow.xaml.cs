@@ -52,6 +52,21 @@ namespace Neurotuner
         public MainWindow()
         {
             InitializeComponent();
+
+            /*Style buttonStyle = new Style();
+            buttonStyle.Setters.Add(new Setter { Property = Control.FontFamilyProperty, Value = new FontFamily("Verdana") });
+            buttonStyle.Setters.Add(new Setter { Property = Control.MarginProperty, Value = new Thickness(10) });
+            buttonStyle.Setters.Add(new Setter { Property = Control.BackgroundProperty, Value = new SolidColorBrush(Colors.Black) });
+            buttonStyle.Setters.Add(new Setter { Property = Control.ForegroundProperty, Value = new SolidColorBrush(Colors.White) });
+            //buttonStyle.Setters.Add(new Setter { Property = Border.CornerRadiusProperty, Value = new CornerRadius(10, 10, 10, 10) });
+            buttonStyle.Setters.Add(new Setter { Property = Border.CornerRadiusProperty, Value = new CornerRadius(10) });
+
+            btnStart.Style = buttonStyle;
+            btnReset.Style = buttonStyle;
+            btnStop.Style = buttonStyle;
+            btnFix.Style = buttonStyle;
+            btnPlus.Style = buttonStyle;
+            btnMinus.Style = buttonStyle;*/
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -833,6 +848,24 @@ namespace Neurotuner
                 mSoundOut.Play();
             }
             else if (cmbSelEff.SelectedIndex == 2)
+            {
+                mSoundOut = new WasapiOut(false, AudioClientShareMode.Exclusive, 1);
+                mSoundOut.Device = mOutputDevices[cmbOutput.SelectedIndex];
+                mSoundOut.Initialize(mMixer.ToWaveSource(16));
+
+                //Start rolling!
+                mSoundOut.Play();
+            }
+            else if (cmbSelEff.SelectedIndex == 3)
+            {
+                mSoundOut = new WasapiOut(false, AudioClientShareMode.Exclusive, 1);
+                mSoundOut.Device = mOutputDevices[cmbOutput.SelectedIndex];
+                mSoundOut.Initialize(mMixer.ToWaveSource(16));
+
+                //Start rolling!
+                mSoundOut.Play();
+            }
+            else if (cmbSelEff.SelectedIndex == 4)
             {
                 mSoundOut = new WasapiOut(false, AudioClientShareMode.Exclusive, 1);
                 mSoundOut.Device = mOutputDevices[cmbOutput.SelectedIndex];
