@@ -51,7 +51,7 @@ namespace Neurotuner
 
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();//НУЖНО
 
             /*Style buttonStyle = new Style();
             buttonStyle.Setters.Add(new Setter { Property = Control.FontFamilyProperty, Value = new FontFamily("Verdana") });
@@ -1169,6 +1169,16 @@ namespace Neurotuner
             lbPitchValue.Content = trackPitch.Value.ToString();
         }
 
+        private void btnStart_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Style style = new Style();
+            style.Setters.Add(new Setter { Property = Control.FontFamilyProperty, Value = new FontFamily("Verdana") });
+            style.Setters.Add(new Setter { Property = Control.MarginProperty, Value = new Thickness(10) });
+            style.Setters.Add(new Setter { Property = Control.BackgroundProperty, Value = new SolidColorBrush(Colors.Blue) });
+            style.Setters.Add(new Setter { Property = Control.ForegroundProperty, Value = new SolidColorBrush(Colors.Black) });
+            btnStart.Style = style;
+        }
+
         private void VolValue()
         {
             lbVolValue.Content = trackGain.Value.ToString();
@@ -1223,6 +1233,10 @@ namespace Neurotuner
             style.Setters.Add(new Setter { Property = Control.BackgroundProperty, Value = new SolidColorBrush(Colors.Blue) });
             style.Setters.Add(new Setter { Property = Control.ForegroundProperty, Value = new SolidColorBrush(Colors.White) });
             btnStart.Style = style;
+
+            //ControlTemplate template = new ControlTemplate();
+            //template.Resources.Add(new Border { Background = new SolidColorBrush(Colors.Blue) }, new Border { Background = new SolidColorBrush(Colors.Blue) });
+            //btnStart.Template = template;
         }
     }
 }
